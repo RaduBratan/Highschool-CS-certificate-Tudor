@@ -1,1 +1,1 @@
-# Highschool-CS-certificate-Tudor
+This is a project I created for my friend's highschool computer science certification. Yes, I built it and allowed him to use it, even if it wasn't at all necessary (the jury didn't have enough time to look at our web projects; we obtained our certifications through simple oral presentations).

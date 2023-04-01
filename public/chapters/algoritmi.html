@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atestat Halasag Tudor-Andrei</title>
+
+    <link rel="stylesheet" href="chapters-css/chapters-style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+</head>
+
+<body>
+    <article class="chapter-page" id="luxy">
+        <div class="chapter-name">
+            <div class="chapter-name-row">
+                <div>Algoritmi</div>
+            </div>
+        </div>
+
+        <h3>Ce este algoritmul</h3>
+
+        <p>
+            Algoritmul este un concept folosit pentru a desemna o mulţime finită de operaţii, complet ordonată în timp,
+            care pornind de la date de intrare produce într-un timp finit date de ieşire. Cu alte cuvinte, algoritmul
+            redă metoda de rezolvare a unei probleme într-un număr finit de paşi.
+            <br />
+            <br />
+            Altfel spus, un algoritm este un sistem de reguli care utilizând un set de date iniţiale ale unei probleme,
+            după execuţia unui număr finit de paşi, facilitează obţinerea datelor finale, trecând printr-un şir de
+            rezultate intermediare.
+
+        </p>
+
+        <h3>Ce face algoritmul</h3>
+
+        <p>
+            Un algoritm trebuie să satisfacă în general următoarele cerinţe:
+            <br />
+            • claritate – descrierea algoritmului trebuie să se facă precis, fără nimic arbitrar, fără ambiguităţi
+            şi să fie
+            prevăzute toate etapele de calcul şi toate situaţiile care se pot ivi până la obţinerea soluţiei;
+            <br />
+            • generalitate – algoritmul trebuie să permită rezolvarea de probleme dintr-o întreagă clasă;
+            <br />
+            • finititudine – algoritmul trebuie să furnizeze rezultatele într-un număr finit (cât mai mic) de paşi;
+            <br />
+            • unicitate – etapele algoritmului trebuie să fie definite în mod unic.
+        </p>
+
+        <h3>Clasificare dupa implementare</h3>
+
+        <p>
+            În funcție de modul de implementare, un algoritm poate fi:
+            <br />
+            • recursiv – se impelementează prin functii care in corpul lor au secvențe de autoapelare, algoritmul este
+            efectiv din punctul de vedere a mărimii codului scris, dar partea negativă a acestuia este consumul mare de
+            memorie pentru parametrii si variabilelor functiilor in cazurile unor recursii ”adînci”;
+            <br />
+            • iterativ (repetitiv) – se implementeză folosind bucle pentru repetarea operațiilor cu condiții clare de
+            oprire a buclei, este mai efectiv ca algoritmul recursiv din punctul de vedere a consmului de memorie
+            (functiile la fiecare apel stochează în memorie parametri, variabile locale, adresa de revenire);
+            <br />
+            • serial sau paralel – aceste două tipuri se deosebesc cardinal unul fața de altul, primul se refera la
+            proiectarea algoritmului pentru sisteme cu un singur procesor, al doilea se refera la proiectarea unui
+            algoritm pentru sisteme cu mai multe procesare, în generl un algoritm serial poate fi transformat în unul
+            paralel însa nu tottimpul. O analogie exemplificativă: o femeie naște un copil în decursul a nouă luni, dar
+            nouă femei nu pot naște un copil în decurs de o lună.
+
+        </p>
+
+        <h3>Clasificare dupa paradigmă</h3>
+
+        <p>
+            În funcție de paradigma utilizată, ei pot fi:
+            <br />
+            • algoritmi backtracking – este un algoritm general de descoperire a tuturor soluțiilor unei probleme de
+            calcul, algoritm ce se bazează pe construirea incrementală de soluții-candidat, abandonând fiecare candidat
+            parțial imediat ce devine clar că acesta nu are șanse să devină o soluție validă;
+            <br />
+            • algoritmi de tip divide et impera – se bazează pe principiul descompunerii problemei în două sau mai multe
+            subprobleme (mai ușoare), care se rezolvă, iar soluția pentru problema inițială se obține combinând
+            soluțiile subproblemelor. De multe ori, subproblemele sunt de același tip și pentru fiecare din ele se poate
+            aplica aceeași tactică a descompunerii în (alte) subprobleme, până când (în urma descompunerilor repetate)
+            se ajunge la probleme care admit rezolvare imediată;
+            <br />
+            • algoritmi de programare dinamică – se aplică atunci cînd rezolvarea unei probleme se reduce la rezolvarea
+            problemelor ce compun problema principală, astfel combinînd solutii pentru subprobleme mici se obțin soluții
+            pentru subprobleme mari. Acest algoritm se deosebește de algoritmul devide et impera prin faptul că devide
+            et impera se aplică problemelor ce se descompun în subprobleme independente pe cînd programarea dinamică se
+            aplică problemelor ce se descompun în subprobleme soluțiile cărora depind una de alta;
+            <br />
+            • algoritmi de tip greedy – acest algoritm rezolva problema gasind solutii optime locale cu speranta de a
+            gasi solutia optima globala.
+        </p>
+
+        <button class="close-chapter">INCHIDE</button>
+    </article>
+
+    <script src="chapters-js/luxy.js" charset="utf-8"></script>
+    <script src="chapters-js/chapters-logic.js"></script>
+</body>
+
+</html>

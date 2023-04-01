@@ -1,0 +1,518 @@
+//C:\Users\home\Desktop\atestat info\Halasag Tudor - 12 E - Atestat Informatica
+
+/*
+######################################
+----------------GLOBAL----------------
+######################################
+*/
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+$pink: #fcbdc9;
+$white: #fff;
+$black: #111;
+$blue: #bfeaff;
+$orange: #fd7f4f;
+
+$slider-width: 100vw;
+$slider-height: 100vh;
+
+::selection {
+  color: $blue;
+  background: $black;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $blue;
+  font-family: "Staatliches", "Helvetica Neue", Helvetica, sans-serif;
+  //font-weight: 900;
+  overflow: hidden;
+  height: 100vh;
+  user-select: none;
+}
+
+iframe {
+  width: 30vw;
+  height: 50vh;
+  //frameborder: 0;
+  border: none;
+  //background-color: #fff;
+  visibility: hidden;
+  border-radius: 1rem;
+}
+
+/*
+#####################################
+----------------INTRO----------------
+#####################################
+*/
+.intro-text-area {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  visibility: hidden;
+  background-color: $blue;
+
+  .intro-text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20vmin;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: $black;
+    font-weight: 500;
+
+    &-row {
+      overflow: hidden;
+      letter-spacing: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+/*
+######################################
+----------------BUTTON----------------
+######################################
+*/
+.open-chapter {
+  width: 10vmax;
+  height: 3vmax;
+  background-color: rgba($blue, 0.7);
+  border-radius: 4rem;
+  position: absolute;
+  z-index: 999;
+  transform: translateY(42vh);
+  cursor: pointer;
+  color: $black;
+  border: 0.4vmax solid darken($blue, 10%);
+  text-decoration: none;
+  font-family: "Staatliches", display;
+  font-size: 1em;
+  opacity: 0;
+
+  &.open-chapter-animation-reveal {
+    animation: reveal-open-chapter 1s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  &.open-chapter-animation-previous {
+    animation: previous-open-chapter 0.6s 0.085s;
+  }
+
+  &.open-chapter-animation-next {
+    animation: next-open-chapter 0.6s 0.085s;
+  }
+
+  @keyframes reveal-open-chapter {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes previous-open-chapter {
+    50% {
+      transform: translateX(-3px) translateY(42vh);
+    }
+  }
+
+  @keyframes next-open-chapter {
+    50% {
+      transform: translateX(3px) translateY(42vh);
+    }
+  }
+}
+
+/*
+#########################################
+----------------SLIDESHOW----------------
+#########################################
+*/
+.slideshow-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s ease;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  visibility: hidden;
+
+  .slides-styler-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: $slider-width;
+    height: $slider-height;
+    z-index: 1;
+    vertical-align: middle;
+    z-index: 95;
+
+    .slides-container {
+      overflow: hidden;
+      display: flex;
+      position: relative;
+      top: 0;
+      left: -$slider-width;
+      width: 1000vw;
+      z-index: 97;
+
+      &.shifting {
+        transition: left 0.2s ease-in-out;
+      }
+
+      .slide {
+        width: $slider-width;
+        height: $slider-height;
+        cursor: pointer;
+        transition: all 0.6s;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 98;
+
+        .image-container {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          transform: translate(0%, 0%);
+          overflow: hidden;
+
+          .image {
+            width: 40vmax;
+            height: 40vmax;
+            position: absolute;
+            background-position: center;
+            background-size: 90%;
+            background-repeat: no-repeat;
+            filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.1));
+
+            &.image1 {
+              width: 15vmax;
+              height: 15vmax;
+              transform: translate(80%, 40%);
+              filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.1));
+            }
+
+            &.image2 {
+              width: 10vmax;
+              height: 10vmax;
+              transform: translate(-150%, -50%) rotate(-45deg);
+              filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.1));
+            }
+          }
+        }
+
+        .layer1 {
+          z-index: 101;
+        }
+
+        .layer2 {
+          z-index: 100;
+        }
+
+        .layer3 {
+          z-index: 99;
+        }
+
+        .text {
+          font-size: 9vw; //10vmax
+          color: $white;
+          position: absolute;
+          transform: translate(0%, 0%);
+        }
+      }
+    }
+  }
+
+  .previous-arrow {
+    transform: translate(-40vw, 0%) rotate(90deg);
+    position: absolute;
+    width: 3vmax;
+    height: 3vmax;
+    cursor: pointer;
+    z-index: 101;
+    opacity: 0.8;
+  }
+
+  .next-arrow {
+    position: absolute;
+    transform: translate(40vw, 0%) rotate(-90deg);
+    width: 3vmax;
+    height: 3vmax;
+    cursor: pointer;
+    z-index: 101;
+    opacity: 0.8;
+  }
+
+  &.animation-reveal {
+    pointer-events: none;
+
+    .text {
+      animation: reveal-text 1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .image {
+      animation: reveal-image 1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .image1 {
+      animation: reveal-image1 1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .image2 {
+      animation: reveal-image2 1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .previous-arrow {
+      animation: reveal-arrow 1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .next-arrow {
+      animation: reveal-arrow 1s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+  }
+
+  &.animation-previous {
+    pointer-events: none;
+
+    .text {
+      animation: previous-text 0.6s 0.085s;
+    }
+
+    .image {
+      animation: previous-image 0.6s 0.085s;
+    }
+
+    .image1 {
+      animation: previous-image1 0.6s 0.085s;
+    }
+
+    .image2 {
+      animation: previous-image2 0.6s 0.085s;
+    }
+
+    .previous-arrow {
+      animation: previous-left-arrow 0.6s;
+    }
+
+    .next-arrow {
+      animation: previous-right-arrow 0.6s;
+    }
+  }
+
+  &.animation-next {
+    pointer-events: none;
+
+    .text {
+      animation: next-text 0.6s 0.085s;
+    }
+
+    .image {
+      animation: next-image 0.6s 0.085s;
+    }
+
+    .image1 {
+      animation: next-image1 0.6s 0.085s;
+    }
+
+    .image2 {
+      animation: next-image2 0.6s 0.085s;
+    }
+
+    .previous-arrow {
+      animation: next-left-arrow 0.6s;
+    }
+
+    .next-arrow {
+      animation: next-right-arrow 0.6s;
+    }
+  }
+}
+
+@keyframes reveal-text {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes reveal-image {
+  0% {
+    opacity: 0;
+    transform: translate(0, -100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes reveal-image1 {
+  0% {
+    opacity: 0;
+    transform: translate(80%, -60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(80%, 40%);
+  }
+}
+
+@keyframes reveal-image2 {
+  0% {
+    opacity: 0;
+    transform: translate(-150%, -150%) rotate(-45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-150%, -50%) rotate(-45deg);
+  }
+}
+
+@keyframes reveal-arrow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes previous-text {
+  35% {
+    transform: translate(-3%, 0%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes previous-image {
+  25%,
+  30% {
+    transform: translate(-6%, 0%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes previous-image1 {
+  45%,
+  50% {
+    transform: translate(60%, 40%);
+  }
+  to {
+    transform: translate(80%, 40%);
+  }
+}
+
+@keyframes previous-image2 {
+  25%,
+  30% {
+    transform: translate(-180%, -50%) rotate(-45deg);
+  }
+  to {
+    transform: translate(-150%, -50%) rotate(-45deg);
+  }
+}
+
+@keyframes previous-left-arrow {
+  50% {
+    transform: translateX(calc(-40vw - 3px)) rotate(90deg);
+  }
+}
+
+@keyframes previous-right-arrow {
+  50% {
+    transform: translateX(calc(40vw - 3px)) rotate(-90deg);
+  }
+}
+
+@keyframes next-text {
+  35% {
+    transform: translate(3%, 0%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes next-image {
+  25%,
+  30% {
+    transform: translate(6%, 0%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes next-image1 {
+  45%,
+  50% {
+    transform: translate(100%, 40%);
+  }
+  to {
+    transform: translate(80%, 40%);
+  }
+}
+
+@keyframes next-image2 {
+  25%,
+  30% {
+    transform: translate(-120%, -50%) rotate(-45deg);
+  }
+  to {
+    transform: translate(-150%, -50%) rotate(-45deg);
+  }
+}
+
+@keyframes next-left-arrow {
+  50% {
+    transform: translateX(calc(-40vw + 3px)) rotate(90deg);
+  }
+}
+
+@keyframes next-right-arrow {
+  50% {
+    transform: translateX(calc(40vw + 3px)) rotate(-90deg);
+  }
+}

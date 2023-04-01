@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atestat Halasag Tudor-Andrei</title>
+
+    <link rel="stylesheet" href="chapters-css/chapters-style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+</head>
+
+<body>
+    <article class="chapter-page" id="luxy">
+        <div class="chapter-name">
+            <div class="chapter-name-row">
+                <div>Informatica</div>
+            </div>
+        </div>
+
+        <h3>Ce inseamnă "backtracking"</h3>
+
+        <p>
+            Backtracking (în traducere aproximativă, “căutare cu revenire” sau “revenire în urmă”) este un principiu
+            fundamental de elaborare a algoritmilor pentru probleme de optimizare, sau de găsire a unor soluții care
+            îndeplinesc anumite condiții.
+            <br />
+            <br />
+            Este o metodă generală de programare, şi poate fi adaptata pentru orice problemă pentru care dorim să
+            obţinem toate soluţiile posibile, sau să selectăm o soluţie optimă, din mulţimea soluţiilor posibile.
+            Solutia este compusa din mai multe elemente (x1, x2, x3…xn) in care fiecare element xi este ales dintr-o
+            multime corespunzatoare Mi numita multimea de baza a elementului xi.
+            <br />
+            <br />
+            Backtracking este însă şi cea mai costisitoare metodă din punct de vedere al
+            timpului de execuţie.
+        </p>
+
+        <h3>Procedura la nivel teoretic</h3>
+
+        <p>
+            1. La fiecare pas k pornim de la o soluţie parţială v=( v1,v2,v3,...,vk-1) determinată până în acel moment
+            şi încercăm să extindem această soluţie adăugând un nou element la sfârşitul vectorului.
+            <br />
+            <br />
+            2. Căutăm în mulţimea Sk , un nou element.
+            <br />
+            <br />
+            3. Dacă există un element neselectat încă, verificăm dacă acest element îndeplineşte condiţiile impuse de
+            problemă, numite condiţii de continuare.
+            <br />
+            <br />
+            4. Dacă sunt respectate condiţiile de continuare, adăugăm elementul soluţiei parţiale.
+            <br />
+            <br />
+            5. Verificăm dacă am obţinut o soluţie completă.
+            <br />
+            - dacă am obţinut o soluţie completă o afişăm şi se reia algoritmul de la pasul 1.
+            <br />
+            - dacă nu am obţinut o soluţie, k
+            <----- k+1 si se reia algoritmul de la pasul 1. <br />
+            <br />
+            6. Dacă nu sunt respectate
+            condiţiile de continuare se reia algoritmul de la pasul 2.
+            <br />
+            <br />
+            7. Dacă nu mai există nici un element
+            neverificat în mulţimea Sk înseamnă că nu mai avem nici o posibilitate din acest moment, să construim
+            soluţia finală aşa că trebuie să modificăm alegerile făcute în prealabil, astfel k <----- k-1 şi se reia
+                problema de la pasul 1. </p>
+
+            <button class="close-chapter">INCHIDE</button>
+    </article>
+
+    <script src="chapters-js/luxy.js" charset="utf-8"></script>
+    <script src="chapters-js/chapters-logic.js"></script>
+</body>
+
+</html>
